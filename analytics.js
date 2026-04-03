@@ -197,10 +197,10 @@ class AIAnalytics {
                 let buttonCategory = 'other';
 
                 if (btn.id === 'dl-lite') {
-                    buttonType = 'Download Lite (119MB)';
+                    buttonType = 'Download Lite (567MB)';
                     buttonCategory = 'lite';
                 } else if (btn.id === 'dl-full') {
-                    buttonType = 'Download Full (4.24GB)';
+                    buttonType = 'Download Full (4.04GB)';
                     buttonCategory = 'full';
                 } else if (btn.textContent.includes('Free Download') || btn.textContent.includes('Download Now')) {
                     buttonType = 'Hero Download Button';
