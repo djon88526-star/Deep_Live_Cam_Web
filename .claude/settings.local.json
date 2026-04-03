@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p docs/tutorials)",
+      "Bash(mkdir -p assets/images)",
+      "Bash(mkdir -p assets/videos)",
+      "Bash(mv *.png *.gif assets/images/)",
+      "Bash(mv *.mp4 assets/videos/)",
+      "Bash(ls -la *.png *.gif *.mp4)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}

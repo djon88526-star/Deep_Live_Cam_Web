@@ -1,0 +1,42 @@
+# .gitignore for Deep Live Cam VFX Website
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies (if you add npm later)
+node_modules/
+
+# Build outputs (if you add build process later)
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Temporary files
+*.tmp
+*.temp
+
+# Analytics data (optional - uncomment if you don't want to track this)
+# analytics-data/
+
+# Backup files
+*.bak
+*.backup
