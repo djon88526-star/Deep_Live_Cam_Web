@@ -30,6 +30,17 @@ body {
     background-attachment: fixed;
 }
 
+/* Prevent layout shift - reserve space for images */
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+video {
+    height: auto;
+    max-width: 100%;
+}
+
 /* YouTube iframe responsive */
 .video-container iframe {
     width: 100%;

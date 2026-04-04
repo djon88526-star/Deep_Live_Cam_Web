@@ -17,10 +17,11 @@
     <meta property="og:url" content="https://www.deeplivecamvfx.com/">
     <meta property="og:type" content="website">
     
-    <!-- Fonts -->
+    <!-- Fonts - Optimized for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet"></noscript>
     
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
@@ -84,7 +85,7 @@
                 <!-- The Video Hero Visual -->
                 <div class="hero-visual spatial-window animate-fade">
                     <div class="video-frame glass">
-                        <video autoplay loop muted playsinline class="hero-video">
+                        <video autoplay loop muted playsinline class="hero-video" preload="metadata" poster="hero_bg.png">
                             <source src="1.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -195,21 +196,21 @@
                 <div class="feature-grid">
                     <div class="feature-card glass spatial-window animate-up">
                         <div class="feature-media">
-                            <img src="2.gif" alt="1-Click Swap Animation">
+                            <img src="2.gif" alt="1-Click Swap Animation" loading="lazy" width="400" height="300">
                         </div>
                         <h3 data-i18n="f1_title">1-Click Swap</h3>
                         <p data-i18n="f1_desc">No complex setup. Powered by cutting-edge deep learning algorithms. Choose a face model and start swapping instantly.</p>
                     </div>
                     <div class="feature-card glass spatial-window animate-up">
                         <div class="feature-media">
-                            <img src="3.gif" alt="GPU Accelerated Animation">
+                            <img src="3.gif" alt="GPU Accelerated Animation" loading="lazy" width="400" height="300">
                         </div>
                         <h3 data-i18n="f2_title">GPU Accelerated</h3>
                         <p data-i18n="f2_desc">No lag, no delay. Process up to 60 FPS for seamless real-time performance with optimized GPU acceleration.</p>
                     </div>
                     <div class="feature-card glass spatial-window animate-up">
                         <div class="feature-media">
-                            <img src="4.gif" alt="Universal Support Animation">
+                            <img src="4.gif" alt="Universal Support Animation" loading="lazy" width="400" height="300">
                         </div>
                         <h3 data-i18n="f3_title">Universal Support</h3>
                         <p data-i18n="f3_desc">Swap faces from your webcam during streaming or video calls on Zoom, Teams, Skype, or Discord. Supports pre-recorded video files.</p>
@@ -231,7 +232,7 @@
                         </ul>
                     </div>
                     <div class="req-video glass animate-up delay-1">
-                        <video autoplay loop muted playsinline class="demo-video">
+                        <video autoplay loop muted playsinline class="demo-video" loading="lazy" preload="none">
                             <source src="8.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -247,7 +248,7 @@
                     <div class="step">
                         <div class="step-num">1</div>
                         <div class="step-media glass">
-                            <img src="B1.png" alt="Step 1: Select Face Model">
+                            <img src="B1.png" alt="Step 1: Select Face Model" loading="lazy" width="300" height="200">
                         </div>
                         <h3 data-i18n="s1_title">Select Face Model</h3>
                         <p data-i18n="s1_desc">Upload a clear photo (or many for training) of the face you want to use.</p>
@@ -255,7 +256,7 @@
                     <div class="step">
                         <div class="step-num">2</div>
                         <div class="step-media glass">
-                            <img src="B2.png" alt="Step 2: Configure Settings">
+                            <img src="B2.png" alt="Step 2: Configure Settings" loading="lazy" width="300" height="200">
                         </div>
                         <h3 data-i18n="s2_title">Configure Settings</h3>
                         <p data-i18n="s2_desc">Adjust blend, lighting, and GPU settings to achieve natural results.</p>
@@ -263,7 +264,7 @@
                     <div class="step">
                         <div class="step-num">3</div>
                         <div class="step-media glass">
-                            <img src="B3.gif" alt="Step 3: Go Live">
+                            <img src="B3.gif" alt="Step 3: Go Live" loading="lazy" width="300" height="200">
                         </div>
                         <h3 data-i18n="s3_title">Go Live!</h3>
                         <p data-i18n="s3_desc">Select "Deep Live Cam AI" as your camera in OBS, Zoom, or Discord.</p>
@@ -469,9 +470,9 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <!-- AI-Powered Analytics System -->
-    <script src="analytics.js"></script>
+    <script src="analytics.js" defer></script>
 
     <!-- Measurement Tools -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWQSTLY5G8"></script>
