@@ -329,8 +329,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000);
     }
 
-    // Initialize Language
-    const savedLang = localStorage.getItem('preferred_lang') || 'en';
+    // Initialize Language - Always default to English
+    const savedLang = 'en';
     changeLang(savedLang);
 
     // Event Listeners for Downloads (Safe Check)
