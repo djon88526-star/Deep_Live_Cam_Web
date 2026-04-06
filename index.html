@@ -58,9 +58,12 @@
     <div class="cursor-glow" id="cursor-glow"></div>
     <header>
         <nav class="glass">
-            <div class="logo" style="display: flex; align-items: center; gap: 10px;">
-                <img src="logo.png" alt="Logo" style="height: 32px; width: 32px; border-radius: 6px;">
-                <div>Deep Live Cam <span>AI</span></div>
+            <div class="logo" style="display: flex; align-items: center; gap: 15px;">
+                <img src="logo.png" alt="Logo" style="height: 48px; width: 48px; border-radius: 6px; box-shadow: 0 0 10px rgba(0,255,255,0.5);">
+                <div style="display: flex; flex-direction: column;">
+                    <div style="font-size: 1.5rem; font-weight: bold; color: #00ffff;">DeepLiveCamAI.com</div>
+                    <div style="font-size: 0.8rem; color: #a0c4ff; font-weight: normal; margin-top: 2px;">Professional AI Face Swap Technology for Streaming & Video Calls</div>
+                </div>
             </div>
             <ul>
                 <li><a href="#features">Features</a></li>
@@ -74,26 +77,51 @@
 
     <main>
         <!-- HERO SECTION: CONTENT + DASHBOARD WIDGET -->
-        <section class="hero" id="home">
-            <div class="container">
-                <div class="hero-content">
-                    <img src="logo.png" alt="Deep Live Cam Logo" class="animate-up" style="max-width: 120px; margin-bottom: 20px; border-radius: 12px; display: block; box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);">
-                    <h1 class="animate-up" data-i18n="hero_title">Professional Real-time <br><span class="gradient-text">Face Swap AI</span></h1>
-                    <p class="animate-up delay-1" data-i18n="hero_subtitle">Unleash the power of AI with 1-click face swapping. Seamlessly integrate with OBS, Zoom, Twitch, and more.</p>
-                    <div class="cta-group animate-up delay-2">
-                        <a href="#download" class="btn btn-primary btn-lg" data-i18n="hero_cta_download">Free Download</a>
-                        <a href="#how-to-use" class="btn btn-outline btn-lg" data-i18n="hero_cta_learn">Learn More</a>
+        <section class="hero" id="home" style="text-align: center; padding: 4rem 0;">
+            <div class="container" style="display: flex; flex-direction: column; align-items: center; max-width: 1000px; margin: 0 auto;">
+                
+                <h1 class="animate-up gradient-text" style="font-size: 4rem; font-weight: 800; margin-bottom: 1rem;">Deep Live Cam AI</h1>
+                <h2 class="animate-up" style="font-size: 1.8rem; font-weight: 600; color: #a0c4ff; margin-bottom: 3rem;">Professional Real-time Face Swap AI Software</h2>
+                
+                <div class="stats-row animate-up delay-1" style="display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; margin-bottom: 3rem;">
+                    <div>
+                        <h3 style="font-size: 2.5rem; color: #00ffff; margin: 0;">50K+</h3>
+                        <p style="font-size: 0.9rem; color: #ccc;">Active Users</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 2.5rem; color: #00ffff; margin: 0;">99%</h3>
+                        <p style="font-size: 0.9rem; color: #ccc;">Accuracy Rate</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 2.5rem; color: #00ffff; margin: 0;">Real-time</h3>
+                        <p style="font-size: 0.9rem; color: #ccc;">Processing</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 2.5rem; color: #00ffff; margin: 0;">Free</h3>
+                        <p style="font-size: 0.9rem; color: #ccc;">Open Source</p>
                     </div>
                 </div>
 
-                <!-- The Video Hero Visual -->
-                <div class="hero-visual spatial-window animate-fade">
-                    <div class="video-frame glass">
-                        <video autoplay loop muted playsinline class="hero-video" preload="metadata" poster="hero_bg.png">
-                            <source src="1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                <p class="description-text animate-up delay-2" style="font-size: 1.1rem; line-height: 1.6; color: #ddd; max-width: 800px; margin-bottom: 4rem;">
+                    <strong>Deep Live Cam</strong> is the most advanced real-time face swap software for Windows PC. Perfect for streamers, content creators, and video professionals. Swap faces seamlessly during live streaming, video calls, or recorded videos with AI-powered precision. Download the <strong style="color: #00ffff;">FREE</strong> version with full features today!
+                </p>
+
+                <div class="hero-bottom-container animate-fade" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: center; gap: 2rem; width: 100%;">
+                    
+                    <div class="logo-circle" style="width: 220px; height: 220px; border-radius: 50%; border: 4px solid #00ffff; box-shadow: 0 0 30px rgba(0, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; background: rgba(0,0,0,0.3);">
+                        <img src="logo.png" alt="Deep Live Cam Target Logo" style="width: 150px; object-fit: contain;">
                     </div>
+
+                    <!-- The Video Hero Visual -->
+                    <div class="hero-visual spatial-window" style="flex: 1; min-width: 300px; max-width: 700px; margin: 0;">
+                        <div class="video-frame glass" style="border-radius: 20px; overflow: hidden; box-shadow: 0 0 20px rgba(0,255,255,0.2);">
+                            <video autoplay loop muted playsinline class="hero-video" preload="metadata" poster="hero_bg.png" style="width: 100%; display: block;">
+                                <source src="1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </section>
