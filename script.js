@@ -333,6 +333,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = 'en';
     changeLang(savedLang);
 
+    // Sticky Download Button - Show on scroll
+    const stickyDownload = document.getElementById('sticky-download');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        // Show button after scrolling down 300px
+        if (currentScroll > 300) {
+            stickyDownload.classList.add('visible');
+        } else {
+            stickyDownload.classList.remove('visible');
+        }
+
+        lastScroll = currentScroll;
+    });
+
     // Event Listeners for Downloads (Safe Check)
     const dlLite = document.getElementById('dl-lite');
     if (dlLite) {
