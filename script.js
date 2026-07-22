@@ -381,5 +381,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
+    // Force hero video to autoplay
+    const heroVideo = document.getElementById('hero-video-main');
+    if (heroVideo) {
+        // Try to play the video
+        heroVideo.play().catch(error => {
+            console.log('Autoplay prevented, will play on user interaction:', error);
+            // If autoplay is blocked, play on first user interaction
+            document.addEventListener('click', () => {
+                heroVideo.play().catch(e => console.log('Play failed:', e));
+            }, { once: true });
+        });
+    }
+
     console.log('Deep Live Cam VFX initialized.');
 });
