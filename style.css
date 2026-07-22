@@ -299,6 +299,28 @@ nav ul a:hover {
     width: 100%;
     border-radius: 12px;
     display: block;
+    position: relative;
+}
+
+/* Hide any video controls or play button overlays */
+.hero-video::before,
+.hero-video::after,
+.spatial-window .glass::before,
+.spatial-window .glass::after {
+    content: none !important;
+}
+
+/* Remove any injected play buttons */
+.spatial-window [class*="play"],
+.spatial-window [class*="control"],
+.spatial-window [class*="overlay"],
+.spatial-window button,
+.spatial-window .vjs-control-bar,
+.spatial-window .plyr__controls {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 
 .bokeh-cyan {
