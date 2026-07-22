@@ -381,17 +381,52 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
-    // Force hero video to autoplay
+    // Force hero video to autoplay - Enhanced version
     const heroVideo = document.getElementById('hero-video-main');
     if (heroVideo) {
-        // Try to play the video
-        heroVideo.play().catch(error => {
-            console.log('Autoplay prevented, will play on user interaction:', error);
-            // If autoplay is blocked, play on first user interaction
-            document.addEventListener('click', () => {
-                heroVideo.play().catch(e => console.log('Play failed:', e));
-            }, { once: true });
+        // Method 1: Try immediate play
+        const playPromise = heroVideo.play();
+
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                console.log('Hero video autoplay started successfully');
+            }).catch(error => {
+                console.log('Autoplay prevented:', error);
+
+                // Method 2: Play on any user interaction
+                const playOnInteraction = () => {
+                    heroVideo.play().then(() => {
+                        console.log('Hero video played after user interaction');
+                        // Remove all listeners after successful play
+                        document.removeEventListener('click', playOnInteraction);
+                        document.removeEventListener('scroll', playOnInteraction);
+                        document.removeEventListener('touchstart', playOnInteraction);
+                    }).catch(e => console.log('Play failed:', e));
+                };
+
+                document.addEventListener('click', playOnInteraction, { once: true });
+                document.addEventListener('scroll', playOnInteraction, { once: true });
+                document.addEventListener('touchstart', playOnInteraction, { once: true });
+            });
+        }
+
+        // Method 3: Force play when video is ready
+        heroVideo.addEventListener('loadeddata', () => {
+            if (heroVideo.paused) {
+                heroVideo.play().catch(e => console.log('Play on loadeddata failed:', e));
+            }
         });
+
+        // Method 4: Intersection Observer - play when visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && heroVideo.paused) {
+                    heroVideo.play().catch(e => console.log('Play on intersection failed:', e));
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(heroVideo);
     }
 
     console.log('Deep Live Cam VFX initialized.');
