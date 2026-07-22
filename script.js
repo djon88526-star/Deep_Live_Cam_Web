@@ -381,34 +381,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
-    // Force hero video autoplay - Final solution
-    const heroVideo = document.querySelector('.hero-video');
-    if (heroVideo) {
-        // Method 1: Force play after short delay (let page settle)
-        setTimeout(() => {
-            heroVideo.play().catch(() => {
-                // Method 2: Play on any user interaction
-                const tryPlay = () => {
-                    heroVideo.play().catch(() => {});
-                    document.removeEventListener('click', tryPlay);
-                    document.removeEventListener('scroll', tryPlay);
-                    document.removeEventListener('touchstart', tryPlay);
-                    document.removeEventListener('keydown', tryPlay);
-                };
-                document.addEventListener('click', tryPlay);
-                document.addEventListener('scroll', tryPlay);
-                document.addEventListener('touchstart', tryPlay);
-                document.addEventListener('keydown', tryPlay);
-            });
-        }, 100);
-
-        // Method 3: Play when video is loaded and visible
-        heroVideo.addEventListener('canplay', () => {
-            if (heroVideo.paused) {
-                heroVideo.play().catch(() => {});
-            }
-        });
-    }
-
     console.log('Deep Live Cam VFX initialized.');
 });
