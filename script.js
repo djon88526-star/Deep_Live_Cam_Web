@@ -249,37 +249,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Spatial UI Interaction Layer ---
-    const windows = document.querySelectorAll('.spatial-window');
-    
-    // 3D Tilt Effect
-    const handleTilt = (e) => {
-        windows.forEach(win => {
-            const rect = win.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            // Only tilt if mouse is near or over the element
-            const distance = Math.hypot(x - rect.width/2, y - rect.height/2);
-            if (distance > 1000) return; 
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 200; 
-            const rotateY = (centerX - x) / 200;
-            
-            win.style.transform = `perspective(2000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(5px)`;
-        });
-    };
-
-    const resetTilt = () => {
-        windows.forEach(win => {
-            win.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)`;
-        });
-    };
-
-    document.addEventListener('mousemove', handleTilt);
-    document.addEventListener('mouseleave', resetTilt);
+    // 3D Tilt Effect disabled - causes GIF autoplay issues
+    // const windows = document.querySelectorAll('.spatial-window');
+    // const handleTilt = (e) => { ... };
+    // const resetTilt = () => { ... };
+    // document.addEventListener('mousemove', handleTilt);
+    // document.addEventListener('mouseleave', resetTilt);
 
     // Cursor Glow Movement
     const cursorGlow = document.getElementById('cursor-glow');
