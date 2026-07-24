@@ -774,6 +774,8 @@ nav ul a:hover {
     font-weight: 800;
     z-index: 10;
     box-shadow: 0 5px 15px rgba(0, 242, 255, 0.4);
+    text-align: center;
+    white-space: nowrap;
 }
 
 .download-card h3 {
